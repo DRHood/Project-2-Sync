@@ -23,6 +23,12 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    occupation: {
+        type: String,
+        default: "undisclosed",
+    },
+    specializations: [],
+    skills: [],
 });
 
-module.exports = mongoose.model('Template', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
