@@ -1,20 +1,29 @@
 const mongoose = require('../db/connection.js')
+const Schema = mongoose.Schema;
 
-const ProjectSchema = new mongoose.Schema({
-  name: {
-      type: String,
-      required: true,
-  },
-  info: String,
-  collaborators: [],
-  images: [],
-  linkedResources: [],
-  attachedFiles: [],
-  due: {
-      type: Date,
-      required: true,
-  },
-  discussion: [],
+const Project = new Schema({
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    dateCreated: Date.now,
+    info: String,
+    collaborators: [],
+    images: [],
+    linkedResources: [],
+    attachedFiles: [],
+    due: {
+        type: Date,
+        required: true,
+    },
+    discussion: {
+        type: Schema.Types.ObjectId,
+        ref: 'Discussion'
+    },
 });
 
-module.exports = mongoose.model('Project', ProjectSchema);
+module.exports = mongoose.model('Project', Project);

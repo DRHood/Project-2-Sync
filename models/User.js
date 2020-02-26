@@ -1,7 +1,7 @@
-const mongoose = require('../db/connection.js')
+const mongoose = require('../db/connection.js');
+const Schema = mongoose.Schema;
 
-
-const UserSchema = new mongoose.Schema({
+const User = new Schema({
   name: {
       firstName: {
           type: String,
@@ -23,6 +23,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    img: String,
     occupation: {
         type: String,
         default: "undisclosed",
@@ -31,4 +32,4 @@ const UserSchema = new mongoose.Schema({
     skills: [],
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', User);
