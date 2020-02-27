@@ -10,7 +10,7 @@ const Project = require('../models/Project.js');
  * TODO: Put all request handlers here
  */
 syncRouter.get('/', (req, res) => {
-  res.redirect('/users');
+  res.redirect('/index');
 });
 
 module.exports = syncRouter;

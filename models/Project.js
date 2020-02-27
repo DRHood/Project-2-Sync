@@ -4,13 +4,13 @@ const Schema = mongoose.Schema;
 const Project = new Schema({
     owner: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
     },
     name: {
         type: String,
         required: true,
     },
-    dateCreated: Date.now,
+    dateCreated: Date,
     info: String,
     collaborators: [],
     images: [],
@@ -22,7 +22,7 @@ const Project = new Schema({
     },
     discussion: {
         type: Schema.Types.ObjectId,
-        ref: 'Discussion'
+        ref: 'Discussion',
     },
 });
 
