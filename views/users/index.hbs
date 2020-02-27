@@ -1,3 +1,5 @@
-<h1>This is a sample hbs file</h1>
-
-<p> please delete this when you start your project. </p>
+<main>
+    {{#each user }}
+    <h2>{{ user.name.firstName }} {{ user.name.lastName }}</h2><br>
+    {{/each }}
+</main>
