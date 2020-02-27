@@ -1,12 +1,37 @@
-<form method="POST" action="/<TODO: models url here (e.g: /accounts)>">
+<h2>Create New Account</h2>
 
-  <!--
-    Template for creating input form for a string object key called stringMember
-    NOTE: for numeric input fields use `type="number"`
-  --->
-  <input type="text" value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" />
+<a href="/">Return to Home Page</a>
 
-  <input type="checkbox" name="<TODO: model.booleanMember (e.g: account.isActive)" value="true" />
+<div>
+    <form method="POST" action="/users">
+        {{!-- firstName --}}
+        <input type="text" name="firstName" value="User">
+        {{!-- lastName --}}
+        <input type="text" name="lastName">
+        {{!-- email --}}
+        <input type="text" name="email">
+        {{!-- birthday --}}
+        <input type="date" name="birthDate">
+        {{!-- gender --}}
+        <div>
+            <input type="radio" name="gender" id="genderM" value="male">
+            <label for="genderM">male</label>
 
-  <input type="submit" value="Create Shop" />
-</form>
+            <input type="radio" name="gender" id="genderF" value="female">
+            <label for="genderF">female</label>
+
+            <input type="radio" name="gender" id="genderU" value="undeclared">
+            <label for="genderU">undeclared</label>
+        </div>
+        {{!-- occupation --}}
+        <input type="text" name="occupation">
+        {{!-- specializations --}}
+        <input type="text" name="specialties">
+        {{!-- skills --}}
+        <input type="text" name="skills">
+
+        <input type="submit" value="Create Profile">
+    </form>
+</div>
+
+

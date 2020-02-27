@@ -20,13 +20,16 @@ userRouter.get('/', (req, res) => {
 });
 // Create GET new route that renders new.hbs form
 userRouter.get('/new', (req, res) => {
-    res.render('users/new');
+    res.render('users/createProfile');
 });
 
 // create GET profile route that renders single user profile page
 userRouter.get('/:id', (req, res) => {
+User.findById(req.params.id).then((user) => {
     res.render('users/profile', { user });
-});
+})
+})
+
 
 // create a POST index route that creates a new User, and redirects to new user profile page
 userRouter.post('/', (req, res) => {

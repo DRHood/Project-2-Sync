@@ -19,6 +19,7 @@ const User = new Schema({
         type: String,
         required: true,
     },
+    birthDate: Date,
     password: {
         type: String,
         required: true,
