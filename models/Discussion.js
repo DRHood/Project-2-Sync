@@ -10,8 +10,4 @@ const Discussion = new Schema({
   comment: String,
 });
 
-/* Step 3
- *
- * TODO: export the schema
- */
 module.exports = mongoose.model('Discussion', Discussion);
