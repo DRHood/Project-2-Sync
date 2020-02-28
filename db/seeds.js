@@ -26,3 +26,10 @@ let newUsers = [
         skills: 'correction of growth issues, general medicine',
     }
 ]
+
+User.deleteMany().then (() => {
+    User.create(newUsers).then(users => {
+    console.log('Saved Users', users)
+    });
+  });
+  
