@@ -4,6 +4,7 @@
   "description": "# Setup",
   "main": "server.js",
   "dependencies": {
+    "atom": "^1.4.0",
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "hbs": "^4.0.4",
