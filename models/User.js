@@ -2,29 +2,26 @@ const mongoose = require('../db/connection.js');
 const Schema = mongoose.Schema;
 
 const User = new Schema({
-  name: {
-      firstName: {
-          type: String,
-          required: true,
-      },
-      middleName: {
-          type: String,
-      },
-      lastName: {
-          type: String,
-          required: true,
-      },
+    firstName: {
+        type: String,
+        equired: true,
+    },
+    middleName: {
+        type: String,
+    },
+    lastName: {
+        type: String,
+        required: true,
     },
     email: {
         type: String,
         required: true,
     },
     birthDate: Date,
-    // password: {
-    //     type: String,
-    //     required: true,
-    // },s
-    img: String,
+    img: {
+        type: String,
+        default: "../../public/img/blank-profile-picture.png",
+    },
     occupation: {
         type: String,
         default: "undisclosed",
