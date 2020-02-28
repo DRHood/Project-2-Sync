@@ -20,7 +20,7 @@ const User = new Schema({
     birthDate: Date,
     img: {
         type: String,
-        default: "../../public/img/blank-profile-picture.png",
+        default: "https://cicloposse.com/wp-content/uploads/2016/03/blank-profile-picture-973460_960_720.png",
     },
     occupation: {
         type: String,
