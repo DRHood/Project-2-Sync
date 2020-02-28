@@ -3,14 +3,6 @@ const userRouter = express.Router();
 
 const User = require('../models/User.js');
 
-/* Step 3 
- * 
- * Create a new router.
- *
- * the router will "contain" all the request handlers that you define in this file.
- * TODO: rename this from templateRouter to something that makes sense. (e.g:
- * `shopRouter`)
- */
 // create GET index route that sends all Users to users/index.hbs 
 userRouter.get('/', (req, res) => {
   User.find().then(users => {
@@ -27,8 +19,8 @@ userRouter.get('/new', (req, res) => {
 userRouter.get('/:id', (req, res) => {
 User.findById(req.params.id).then((user) => {
     res.render('users/profile', { user });
-})
-})
+    });
+});
 
 
 // create a POST index route that creates a new User, and redirects to new user profile page

@@ -20,10 +20,10 @@ const User = new Schema({
         required: true,
     },
     birthDate: Date,
-    password: {
-        type: String,
-        required: true,
-    },
+    // password: {
+    //     type: String,
+    //     required: true,
+    // },s
     img: String,
     occupation: {
         type: String,
