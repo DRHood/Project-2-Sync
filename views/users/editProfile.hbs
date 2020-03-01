@@ -4,7 +4,7 @@
     <a href="/">Return to User Index</a><br><br><br>
 
     <div class="container">
-        <form method="POST" action="{{ user.id }}"?_method=PUT>
+        <form method="POST" action="{{ user.id }}?_method=PUT">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     {{!-- firstName --}}
@@ -41,6 +41,9 @@
                 </div>
             </div>   
         </div>
-        <input type="submit" value="Update Profile">
+        <input class="form-control" type="submit" value="Update Profile">
     </form>
 
+<form method="POST" action="{{ user.id }}?_method=DELETE">
+  <input class="form-control" type="submit" value="Delete" />
+</form>

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const User = new Schema({
     firstName: {
         type: String,
-        equired: true,
+        required: true,
     },
     middleName: {
         type: String,
@@ -26,8 +26,8 @@ const User = new Schema({
         type: String,
         default: "undisclosed",
     },
-    specializations: [],
-    skills: [],
+    specializations: Array,
+    skills: Array,
 });
 
 module.exports = mongoose.model('User', User);

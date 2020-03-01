@@ -1,0 +1,15 @@
+<main>
+    <div class="container">
+        <img class="profile-pic" src="{{ user.img }}" alt="user pic">
+
+        <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+        <p><strong>{{ user.occupation }}</strong></p>
+        {{#each user.skills }}
+        <ul>
+            <li>{{ this }}</li>
+        </ul>
+        {{/each }}
+
+        <p><a href="{{ user.email }}">contact</a></p>
+    </div>
+</main>

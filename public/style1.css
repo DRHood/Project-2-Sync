@@ -1,3 +1,7 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
 a {
     color: #000000;
 }
@@ -5,4 +9,11 @@ a {
 a:hover {
     color: #7d0a00;
     text-decoration: none;
+}
+
+.profile-pic {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
 }
