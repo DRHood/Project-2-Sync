@@ -17,3 +17,11 @@ a:hover {
     height: 200px;
     border: 1px solid black;
 }
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: .75em;
+}

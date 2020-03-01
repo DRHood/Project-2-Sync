@@ -3,13 +3,23 @@
         <img class="profile-pic" src="{{ user.img }}" alt="user pic">
 
         <h3>{{ user.firstName }} {{ user.lastName }}</h3>
-        <p><strong>{{ user.occupation }}</strong></p>
-        {{#each user.skills }}
-        <ul>
-            <li>{{ this }}</li>
-        </ul>
-        {{/each }}
+        <h4>{{ user.occupation }}</h4>
+        <h5><a href="{{ user.email }}">contact me</a></h5>
 
-        <p><a href="{{ user.email }}">contact</a></p>
+        <p><strong>Specialties:</strong></p>
+        <p>
+        {{#each user.specializations }}
+            <span>{{ this }},</span>
+        {{/each }}
+        </p>
+        
+        <p><strong>Skills:</strong></p>        
+        <ul>
+        {{#each user.skills }}
+            <li>{{ this }}</li>
+        {{/each }}    
+        </ul>
+        
+        <a href="/{{ user.id }}/edit">Edit profile</a>
     </div>
 </main>
