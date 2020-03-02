@@ -12,10 +12,10 @@ const Project = new Schema({
     },
     dateCreated: Date.now,
     info: String,
-    collaborators: Array,
-    images: Array,
+    // collaborators: Array,
+    // images: Array,
     linkedResources: Array,
-    attachedFiles: Array,
+    // attachedFiles: Array,
     due: {
         type: Date,
         required: true,
