@@ -2,10 +2,10 @@ const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema;
 
 const Project = new Schema({
-    owner: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-    },
+    // owner: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User',
+    // },
     name: {
         type: String,
         required: true,
