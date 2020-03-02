@@ -16,7 +16,7 @@ projectRouter.get('/', (req, res) => {
 // NEW
 // new.hbs form
 projectRouter.get('/new', (req, res) => {
-    res.render('projects/createProjects');
+    res.render('projects/createProject');
 });
 
 // SHOW PROJECT

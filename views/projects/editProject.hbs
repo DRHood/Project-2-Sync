@@ -1,0 +1,43 @@
+<main>
+<div class="container">
+    <h2>Edit Project</h2>
+
+    <a href="/">Return to Project</a>
+    <a href="/">Return to Projects</a><br><br>
+
+    <div class="container">
+        <form method="POST" action="{{ project.id }}?_method=PUT">
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    {{!-- Project Information --}}
+                    <p>
+                        <label>Text Area</label>
+                        <textarea id = "myTextArea" rows = "8"cols = "40">Your text here</textarea>
+                    </p>
+                </div>
+                <div class="form-group col-md-6">
+                    {{!-- occupation --}}
+                    <input class="form-control" type="text" name="occupation" value="{{ user.occupation }}">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    {{!-- Project Name --}}
+                    <input class="form-control" type="text" name="name" value="{{ project.name }}">
+                </div>
+                <div class="form-group col-md-6">
+                    {{!-- Creation Date --}}
+                    <input class="form-control" type="datetime-local" name="dateCreated" value="{{ project.dateCreated }}">
+                </div>
+            </div>
+
+            <input class="form-control" type="submit" value="Update Profile">
+        </form>
+    </div>
+</div>
+</main>
+{{!-- <form method="POST" action="{{ user.id }}?_method=DELETE">
+  <input class="form-control " type="submit" value="Delete" />
+</form> --}}

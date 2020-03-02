@@ -4,7 +4,7 @@ const app = express();
 const methodOverride = require('method-override');
 const logger = require('morgan')
 const userRouter = require('./controllers/users.js');
-const projectRouter = require('./controllers/projects.js')
+const projectRouter = require('./controllers/projects.js');
 
 // MIDDLEWARE
 app.use(express.urlencoded({extended: true}));
@@ -19,7 +19,7 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 
 // router for application to use, first argument is prefix to all paths defined in the router
-app.use('/project', projectRouter)
+app.use('/projects', projectRouter);
 app.use('/', userRouter);
 
 // port the server to run on, NOTE: keep at the bottom of the file
