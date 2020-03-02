@@ -10,7 +10,10 @@ const Project = new Schema({
         type: String,
         required: true,
     },
-    dateCreated: Date.now,
+    dateCreated: {
+        type: Date,
+        default: Date.now,
+    },
     info: String,
     // collaborators: Array,
     // images: Array,
