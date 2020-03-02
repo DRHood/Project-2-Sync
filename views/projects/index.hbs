@@ -1,0 +1,18 @@
+<main>
+    <h2>Active Projects</h2>
+    
+    {{#each projects }}
+
+        <div class="container">
+    
+            <a href="{{ id }}"><h3>{{ name }} {{ dateCreated }}</h3>
+            <p>Iteration Due: {{ due }}</p></a>
+            <br>
+
+        </div>  
+
+    {{/each }}
+    
+    <a href="/new">Create Project</a>
+
+</main>

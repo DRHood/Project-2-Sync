@@ -1,10 +1,18 @@
 <main>
-    <h1>{{ name }}</h1>
+    <divclass="container">
+        <h1>{{ name }}</h1>
 
-    <h2>Project Info</h2>
-    <h3>Date launched{{ dateCreated }}</h3>
-    <p>{{ info }}</p>
+        <h2>Project Info</h2>
+        <h3>Date launched{{ dateCreated }}</h3>
+        <p>{{ info }}</p>
 
-    <h4>Iteration Expected Due:  {{ due }}</h4>
+        <h4>Iteration Expected Due:  {{ due }}</h4>
+
+        <a href="/{{ project.id }}/edit">Edit Project</a>
+    </div>
+    
+    <form method="POST" action="{{ project.id }}?_method=DELETE">
+        <input class="form-control " type="submit" value="Delete" />
+    </form>
 </main>
 
