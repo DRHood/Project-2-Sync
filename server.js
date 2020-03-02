@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(methodOverride('_method'));
 
-app.use(express.static(__dirname+"/public"));
+app.use(express.static(__dirname + "/public"));
 
 app.set('view engine', 'hbs');
 
@@ -21,7 +21,7 @@ app.use(logger('dev'));
 app.use('/', userRouter);
 
 // port the server to run on, NOTE: keep at the bottom of the file
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log('App is listening on PORT ' + PORT);
+const port = process.env.port || 3000;
+app.listen(port, () => {
+    console.log('App is listening on port ' + port);
 });

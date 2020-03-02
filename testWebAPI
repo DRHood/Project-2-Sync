@@ -2,7 +2,7 @@
 
 function usage() {
   cat<<-HERE
-Usage: ./$(basename $0) [-p PORT] METHOD PATH [ARGS...]
+Usage: ./$(basename $0) [-p port] METHOD PATH [ARGS...]
 
   Tests the web api called at localhost using
 
@@ -26,8 +26,8 @@ Usage: ./$(basename $0) [-p PORT] METHOD PATH [ARGS...]
      delete
        makes delete request to PATH
 
-  -p PORT
-    sets the port to use when making the request to PORT. This defaults to
+  -p port
+    sets the port to use when making the request to port. This defaults to
     3000.
 
   Example:
