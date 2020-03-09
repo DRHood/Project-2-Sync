@@ -2,41 +2,45 @@
 <div class="container">
     <h2>Create New Project</h2>
 
-    <a href="/projects">Return to Projects</a><br><br>
+    <a href="/projects">Go to Projects</a><br><br>
 
     <div class="container">
         <form method="POST" action="/projects">
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    {{!-- Project Information --}}
-                    <p>
-                        <label>Project Details</label>
-                        <textarea class="form-control" name="" id = "myTextArea" rows = "8"cols = "40">Enter project information</textarea>
-                    </p>
-                </div>
-                <div class="form-group col-md-6">
-                    {{!-- occupation --}}
-                    <input class="form-control" type="text" name="occupation" value="{{ user.occupation }}">
-                </div>
-            </div>
-            
-            <div class="form-row">
-                <div class="form-group col-md-6">
                     {{!-- Project Name --}}
-                    <input class="form-control" type="text" name="name" value="{{ project.name }}">
+                    <label for="">Project Name</label>
+                    <input class="form-control" type="text" name="name" placeholder="Enter project name">
                 </div>
                 <div class="form-group col-md-6">
                     {{!-- Creation Date --}}
-                    <input class="form-control" type="datetime-local" name="dateCreated" value="{{ project.dateCreated }}">
+                    <label for="">Creation Date</label>
+                    <input class="form-control" type="date" name="dateCreated">
                 </div>
             </div>
 
-            <input class="form-control" type="submit" value="Update Profile">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    {{!-- Project Information --}}
+                    <label>Project Details</label>
+                    <textarea class="form-control" name="info" id = "myTextArea" rows = "8"cols = "40">Enter project information</textarea>
+                </div>
+                <div class="form-group col-md-6">
+                    {{!-- Link Resource --}}
+                    <label for="">Link Resource</label>
+                    <input class="form-control" type="text" name="linkedResources" placeholder="Enter link text">
+                    <br>
+                    <label for="">Iteration Due Date</label>
+                    <input class="form-control" type="datetime-local" name="due">
+                </div>
+            </div>
+            
+            <input class="form-control" type="submit" value="Create Project">
         </form>
     </div>
 </div>
 </main>
-{{!-- <form method="POST" action="{{ user.id }}?_method=DELETE">
+{{!-- <form method="POST" action="{{ project.id }}?_method=DELETE">
   <input class="form-control " type="submit" value="Delete" />
 </form> --}}

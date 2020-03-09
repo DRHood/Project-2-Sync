@@ -24,14 +24,16 @@ projectRouter.get('/new', (req, res) => {
 projectRouter.get('/:id', (req, res) => {
 Project.findById(req.params.id).then(project => {
     res.render('projects/project', { project });
-    });
+    }).catch((e)=> {
+        console.log(e)
+    })
 });
 
 // CREATE
 // creates a new Project, redirect to new project
 projectRouter.post('/', (req, res) => {
     Project.create(req.body).then(() =>{
-        res.redirect('/');
+        res.redirect('/projects');
     });
 });
 
@@ -41,7 +43,7 @@ projectRouter.get('/:id/edit', (req, res) => {
     let project = null;
     Project.findById(req.params.id).then(foundProject => {
         project = foundProject;
-        res.render('projects/editProjects', { project });
+        res.render('projects/editProject', { project });
     }).catch(e => {
         console.log(e);
     });

@@ -1,48 +1,65 @@
-/* Step 1 import express
- *
- */
-const express = require('express')
+const express = require('express');
+const discussionRouter = express.Router();
 
-/* Step 2
- *
- * Import the api files from the models
- *
- * TODO: change the file path to the models file you'll need to use.
- * TODO: rename this from `TemplateModel` to something more sensible (e.g:
- * `Shop`)
- *
- * NOTE: You may need to import more than one API to create the 
- * controller you need.
- * 
- */
-const TemplateModel = require('../models/template.js')
+// REQUIREMENTS
+const Discussion = require('../models/Discussion.js');
 
-/* Step 3 
- * 
- * Create a new router.
- *
- * the router will "contain" all the request handlers that you define in this file.
- * TODO: rename this from templateRouter to something that makes sense. (e.g:
- * `shopRouter`)
- */
-const templateRouter = express.Router()
+// INDEX
+// discussions/index.hbs 
+discussionRouter.get('/', (req, res) => {
+  Discussion.find().then(discussions => {
+      console.log(discussions);
+      res.render('discussions/index', { discussions });
+  });
+});
 
-/* Step 4
- * 
- * TODO: Put all request handlers here
- */
+// NEW
+// new.hbs form
+discussionRouter.get('/new', (req, res) => {
+    res.render('discussions/createDiscussion');
+});
 
-/* Step 5
- *
- * TODO: delete this handler; it's just a sample
- */ 
-templateRouter.get('/', (req, res) => {
-  res.send('hello, world');
-})
+// SHOW DISCUSSION
+// single discussion discussion page
+discussionRouter.get('discussions/:id', (req, res) => {
+Discussion.findById(req.params.id).then(discussion => {
+    res.render('discussions/discussion', { discussion });
+    });
+});
 
-/* Step 6
- *
- * Export the router from the file.
- *
- */
-module.exports = templateRouter;
+// CREATE
+// creates a new Discussion, redirect to new discussion
+discussionRouter.post('/', (req, res) => {
+    Discussion.create(req.body).then(() =>{
+        res.redirect('/discussions');
+    });
+});
+
+// EDIT
+//GET edit route "/:id/edit" that renders edit.hbs and sends it a discussion's data
+discussionRouter.get('/:id/edit', (req, res) => {
+    let discussion = null;
+    Discussion.findById(req.params.id).then(foundDiscussion => {
+        discussion = foundDiscussion;
+        res.render('discussions/editDiscussions', { discussion });
+    }).catch(e => {
+        console.log(e);
+    });
+});
+
+// UPDATE
+// Update route "/:id" that updates the discussion and redirects to the discussion
+discussionRouter.put('/:id', (req, res) => {
+    Discussion.findByIdAndUpdate(req.params.id, req.body).then(discussion => {
+        res.redirect('/' + discussion.id);
+    });
+});
+
+// Delete route "/:id" that deletes discussion and redirects to index page "/"
+discussionRouter.delete('/:id', (req, res) => {
+    Discussion.findByIdAndRemove(req.params.id).then(() => {
+        res.redirect('/');
+    });
+});
+
+module.exports = discussionRouter;
