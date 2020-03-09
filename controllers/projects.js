@@ -53,7 +53,9 @@ projectRouter.get('/:id/edit', (req, res) => {
 // Update route "/:id" that updates the project and redirects to the project
 projectRouter.put('/:id', (req, res) => {
     Project.findByIdAndUpdate(req.params.id, req.body).then(project => {
-        res.redirect('/' + project.id);
+        res.redirect('/projects/' + project.id);
+    }).catch(e => {
+        console.log(e);
     });
 });
 

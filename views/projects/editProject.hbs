@@ -1,15 +1,15 @@
 <main>
 <div class="container">
-    <h2>Create New Project</h2><br><br>
+    <h2>Edit Project</h2><br><br>
 
     <div class="container">
-        <form method="POST" action="/projects/{{ projects.id }}?_method=PUT">
+        <form method="POST" action="/projects/{{ project.id }}?_method=PUT">
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     {{!-- Project Name --}}
                     <label for="">Project Name</label>
-                    <input class="form-control" type="text" name="name" value="{{ name }}">
+                    <input class="form-control" type="text" name="name" value="{{ project.name }}">
                 </div>
                 <div class="form-group col-md-6">
                     {{!-- Creation Date --}}
@@ -22,7 +22,7 @@
                 <div class="form-group col-md-6">
                     {{!-- Project Information --}}
                     <label>Project Details</label>
-                    <textarea class="form-control" name="info" id = "myTextArea" rows = "8"cols = "40" value="{{ project.info }}">Enter project information</textarea>
+                    <textarea class="form-control" name="info" id = "myTextArea" rows = "8"cols = "40">{{ project.info }}</textarea>
                 </div>
                 <div class="form-group col-md-6">
                     {{!-- Link Resource --}}
