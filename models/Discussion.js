@@ -11,11 +11,11 @@ const Comment = new Schema({
 });
 
 const Discussion = new Schema({
-  Topic: {
+  topic: {
     type: String,
     required: true,
   },
-  dateCreated: Date,
+  commentDate: Date,
   comments: [Comment],
 });
 

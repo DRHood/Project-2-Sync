@@ -1,0 +1,18 @@
+<main>
+     <h2>Discussions</h2>
+    
+    {{#each discussions }}
+
+        <div class="container">
+
+            <a href="/discussions/{{ _id }}"><h3>{{ topic }}</h3></a>
+            <p><strong>Project Created:</strong> {{ dateCreated }} </p>
+            <br>
+
+        </div>  
+
+    {{/each }}
+    
+    <a href="/discussions/new">New Discussion</a>
+</main>
+

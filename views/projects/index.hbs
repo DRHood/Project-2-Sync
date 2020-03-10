@@ -4,10 +4,10 @@
     {{#each projects }}
 
         <div class="container">
-    
-            <a href="/projects/{{ _id }}"><h3>{{ name }}</h3>
+
+            <a href="/projects/{{ _id }}"><h3>{{ name }}</h3></a>
             <p><strong>Project Created:</strong> {{ dateCreated }} </p>
-            <p><strong>Iteration Due:</strong> {{ due }}</p></a>
+            <p><strong>Iteration Due:</strong> {{ due }}</p>
             <br>
 
         </div>  
@@ -15,5 +15,4 @@
     {{/each }}
     
     <a href="/projects/new">Create Project</a>
-
 </main>
