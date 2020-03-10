@@ -22,7 +22,7 @@ discussionRouter.get('/new', (req, res) => {
 // SHOW DISCUSSION
 // single discussion page
 discussionRouter.get('discussions/:id', (req, res) => {
-Discussion.findById(req.params.id).then(discussion => {
+Discussion.findById(req.params.id).populate('comment').then(discussion => {
     res.render('discussions/discussion', { discussion });
     });
 });
