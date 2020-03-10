@@ -1,13 +1,22 @@
 const mongoose = require('../db/connection.js');
 const Schema = mongoose.Schema;
 
-const Discussion = new Schema({
+const Comment = new Schema({
   user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
+    type: String,
+    required: true,
   },
-  dateCreated: Date.now,
-  comment: String,
+    dateCreated: Date,
+    comment: String,
+});
+
+const Discussion = new Schema({
+  Topic: {
+    type: String,
+    required: true,
+  },
+  dateCreated: Date,
+  comments: [Comment],
 });
 
 module.exports = mongoose.model('Discussion', Discussion);

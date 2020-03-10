@@ -20,7 +20,7 @@ discussionRouter.get('/new', (req, res) => {
 });
 
 // SHOW DISCUSSION
-// single discussion discussion page
+// single discussion page
 discussionRouter.get('discussions/:id', (req, res) => {
 Discussion.findById(req.params.id).then(discussion => {
     res.render('discussions/discussion', { discussion });
@@ -28,10 +28,10 @@ Discussion.findById(req.params.id).then(discussion => {
 });
 
 // CREATE
-// creates a new Discussion, redirect to new discussion
+// creates a new discussion, redirect to new discussion
 discussionRouter.post('/', (req, res) => {
     Discussion.create(req.body).then(() =>{
-        res.redirect('/discussions');
+        res.redirect('/discussions/:id');
     });
 });
 
