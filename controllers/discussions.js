@@ -21,8 +21,9 @@ discussionRouter.get('/new', (req, res) => {
 
 // SHOW DISCUSSION
 // single discussion page
-discussionRouter.get('discussions/:id', (req, res) => {
+discussionRouter.get('/:id', (req, res) => {
 Discussion.findById(req.params.id).populate('comment').then(discussion => {
+    console.log(discussion)
     res.render('discussions/discussion', { discussion });
     });
 });
@@ -35,24 +36,14 @@ discussionRouter.post('/', (req, res) => {
     });
 });
 
-// EDIT
-//GET edit route "/:id/edit" that renders edit.hbs and sends it a discussion's data
-discussionRouter.get('/:id/edit', (req, res) => {
-    let discussion = null;
-    Discussion.findById(req.params.id).then(foundDiscussion => {
-        discussion = foundDiscussion;
-        res.render('discussions/editDiscussions', { discussion });
-    }).catch(e => {
-        console.log(e);
-    });
-});
-
 // UPDATE
 // Update route "/:id" that updates the discussion and redirects to the discussion
 discussionRouter.put('/:id', (req, res) => {
     Discussion.findByIdAndUpdate(req.params.id, req.body).then(discussion => {
-        res.redirect('/' + discussion.id);
-    });
+        res.redirect('/discussions/' + discussion.id);
+    }).catch((err) => {
+        console.log(err)
+    })
 });
 
 // Delete route "/:id" that deletes discussion and redirects to index page "/"
