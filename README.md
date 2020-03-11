@@ -7,5 +7,7 @@ Public Project Board
 https://git.generalassemb.ly/DRHood/Project-2-Sync/projects/1?add_cards_query=is%3Aopen
 
 Wireframe
-
 ![wireframe](Project2TentativeMockup.png)
+
+ERD
+![ERD](P2_ERD.png)
