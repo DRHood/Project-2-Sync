@@ -14,7 +14,6 @@ userRouter.get('/', (req, res) => {
 });
 
 // NEW
-// new.hbs form
 userRouter.get('/new', (req, res) => {
     res.render('users/createProfile');
 });
