@@ -2,7 +2,7 @@ const express = require('express');
 const userRouter = express.Router();
 
 // REQUIREMENTS
-const User = require('../models/user.js');
+const User = require('../models/User.js');
 
 // INDEX
 // users/index.hbs 
