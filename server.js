@@ -4,7 +4,7 @@ const app = express();
 const methodOverride = require('method-override');
 const logger = require('morgan')
 
-const userRouter = require('./controllers/users.js');
+const userRouter = require('./controllers/users');
 const projectRouter = require('./controllers/projects.js');
 const discussionRouter = require('./controllers/discussions.js');
 
